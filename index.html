@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Something Special 💖</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    height:100%;
+    font-family:'Comic Sans MS', cursive;
+    overflow:hidden;
+}
+
+/* Background Slider */
+.background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index:-2;
+}
+
+.background img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    opacity:0;
+    transition:opacity 1.5s ease-in-out, transform 10s ease-in-out;
+    transform:scale(1);
+}
+
+.background img.active{
+    opacity:1;
+    transform:scale(1.05);
+}
+
+/* Overlay */
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.4);
+    z-index:-1;
+}
+.letter{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:fadeIn 1s ease;
+}
+
+.paper{
+    background:#f4e7d3;
+    color:#3b2f2f;
+    width:90%;
+    max-width:550px;
+    padding:40px;
+    border-radius:8px;
+    box-shadow:0 15px 50px rgba(0,0,0,0.6);
+    font-family:'Cormorant Garamond', serif;
+    font-size:22px;
+    line-height:1.8;
+    position:relative;
+    animation:slideUp 1s ease;
+}
+
+/* Vintage paper texture effect */
+.paper::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.05);
+    mix-blend-mode:multiply;
+    border-radius:8px;
+}
+
+.paper h2{
+    font-family:'Great Vibes', cursive;
+    font-size:36px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* Profile styling */
+.profile-top, .profile-bottom{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.profile-top img,
+.profile-bottom img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #8b6f47;
+    margin:10px 0;
+}
+
+.profile-bottom{
+    margin-top:30px;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes slideUp{
+    from{transform:translateY(80px); opacity:0;}
+    to{transform:translateY(0); opacity:1;}
+}
+
+
+/* Center Content Properly */
+.container{
+    position:relative;
+    z-index:2;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+h1{
+    font-size:42px;
+}
+
+p{
+    font-size:22px;
+    margin-top:15px;
+}
+
+button{
+    margin-top:35px;
+    padding:14px 28px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#yes{
+    background:#28a745;
+    color:white;
+}
+
+#no{
+    background:#dc3545;
+    color:white;
+    position:absolute;
+}
+
+.hidden{
+    display:none;
+}
+
+#finalMessage{
+    font-size:28px;
+    margin-top:40px;
+}
+
+/* Floating Hearts */
+.heart{
+    position:absolute;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float{
+    0%{transform: translateY(100vh);}
+    100%{transform: translateY(-10vh);}
+}
+
+/* Mobile */
+@media(max-width:768px){
+    h1{font-size:26px;}
+    p{font-size:18px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <img src="commuinst.jpg" class="active">
+    <img src="travelgirl.png">
+    <img src="catty.jpg">
+ <img src="muruga.jpg">
+ <img src="teacher.avif">
+</div>
+
+<div class="overlay"></div>
+
+<div class="container">
+    <h1 id="title">Hey machi 🥺💖</h1>
+    <p id="message">Unkitta oru matter ah potu odakkaum...</p>
+
+    <div id="buttons">
+        <button id="yes">YES 💍</button>
+        <button id="no">NO 🙈</button>
+    </div>
+
+    <div id="finalMessage" class="hidden">
+        YAYYYYY 😍💖 You Just Made Me The Happiest Person Everrrr!!!
+    </div>
+</div>
+<div id="loveLetter" class="letter hidden">
+    <div class="paper">
+
+        <!-- Her Profile -->
+        <div class="profile-top">
+            <img src="herprofile.jpg" alt="Her Profile">
+            <p>@enigmalass_lovelyfeather</p>
+        </div>
+
+        <h2>My Dearest Love,</h2>
+
+        <p>
+            machi un melaa ulla peranba kadaisi vara unaku kodukka aasapadren... 💖<br>
+            endha situationlayum unakku supportive soulahh na nippan <br>
+            nee patta kastatam edhum ne nenachu pakkatha level unna happya vachukrathey en aasa  🤝💞<br>
+            na ellartayu anba olichu vachurpan machi but romba pasakaran unkitta tha romba velipadaya en paasatha kottetan <br>
+            I only expect your happiness from you machi .<br>
+        </p>
+
+        <!-- Your Profile -->
+        <div class="profile-bottom">
+            <p>Written with love by</p>
+            <img src="myprofile.jpg" alt="My Profile">
+            <p>@royalkingsunder</p>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+
+/* Background Slider */
+let slides = document.querySelectorAll(".background img");
+let current = 0;
+
+setInterval(()=>{
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+}, 4000);
+
+/* Floating Hearts */
+setInterval(()=>{
+    let heart = document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*20+20+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>{heart.remove()},5000);
+},500);
+
+/* YES Button */
+document.getElementById("yes").onclick=function(){
+    document.getElementById("buttons").style.display="none";
+    document.getElementById("loveLetter").classList.remove("hidden");
+}
+
+
+ 
+/* NO Button Escape */
+document.getElementById("no").onmouseover=function(){
+    this.style.top=Math.random()*80+"vh";
+    this.style.left=Math.random()*80+"vw";
+}
+
+</script>
+
+</body>
+</html>
